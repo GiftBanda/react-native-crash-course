@@ -25,8 +25,16 @@ const SignIn = () => {
           </Text>
           <FormField
             title="email"
+            placeholder="Email"
             value={form.email}
-            handleChangeText={(e) => setForm({ ...form, email: e })}
+            handleChangeText={(e:any) => setForm({ ...form, email: e })}
+            otherStyles="mt-7"
+          />
+          <FormField
+            title="password"
+            placeholder="Password"
+            value={form.password}
+            handleChangeText={(e:any) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
           />
         </View>
