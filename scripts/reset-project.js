@@ -54,19 +54,19 @@ fs.rename(oldDirPath, newDirPath, (error) => {
     }
     console.log('New /app directory created.');
 
-    const indexPath = path.join(newAppDirPath, 'index.tsx');
+    const indexPath = path.join(newAppDirPath, 'index.jsx');
     fs.writeFile(indexPath, indexContent, (error) => {
       if (error) {
-        return console.error(`Error creating index.tsx: ${error}`);
+        return console.error(`Error creating index.jsx: ${error}`);
       }
-      console.log('app/index.tsx created.');
+      console.log('app/index.jsx created.');
 
-      const layoutPath = path.join(newAppDirPath, '_layout.tsx');
+      const layoutPath = path.join(newAppDirPath, '_layout.jsx');
       fs.writeFile(layoutPath, layoutContent, (error) => {
         if (error) {
-          return console.error(`Error creating _layout.tsx: ${error}`);
+          return console.error(`Error creating _layout.jsx: ${error}`);
         }
-        console.log('app/_layout.tsx created.');
+        console.log('app/_layout.jsx created.');
       });
     });
   });

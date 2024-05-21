@@ -4,9 +4,9 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Image } from "react-native";
 import {images} from '../constants'
-import CustomButton from "@/components/CustomButton";
+import CustomButton from "../components/CustomButton";
 
-export default function App() {
+const App = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{height: '100%'}}>
@@ -52,3 +52,5 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+export default App;

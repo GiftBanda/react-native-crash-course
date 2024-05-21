@@ -3,10 +3,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useState } from "react";
 
 import { images } from "../../constants";
-import FormField from "@/components/FormField";
+import FormField from "../../components/FormField";
 
 const SignIn = () => {
-  const [form, setForm] = useState<any>({
+  const [form, setForm] = useState({
     email: "",
     password: "",
   });
@@ -24,17 +24,17 @@ const SignIn = () => {
             Log in to Aora
           </Text>
           <FormField
-            title="email"
+            title="Email"
             placeholder="Email"
             value={form.email}
-            handleChangeText={(e:any) => setForm({ ...form, email: e })}
+            handleChangeText={(e) => setForm({ ...form, email: e })}
             otherStyles="mt-7"
           />
           <FormField
-            title="password"
+            title="Password"
             placeholder="Password"
             value={form.password}
-            handleChangeText={(e:any) => setForm({ ...form, password: e })}
+            handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
           />
         </View>

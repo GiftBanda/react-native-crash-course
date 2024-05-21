@@ -1,16 +1,16 @@
 import { View, Text, Image } from 'react-native'
 import React, {FC} from 'react';
 import { Tabs, Redirect } from 'expo-router';
-import {icons} from '../../constants';
+import { icons } from '../../constants';
 
-interface TabsIconProps {
-    icon: any,
-    color: string,
-    name: string,
-    focused: any
-}
+// interface TabsIconProps {
+//     icon: any,
+//     color: string,
+//     name: string,
+//     focused: any,
+// }
 
-const TabIcon:FC<TabsIconProps> = ({ icon, color, name, focused }) => {
+const TabIcon = ({ icon, color, name, focused }) => {
     return (
         <View className='items-center justify-center gap-2'>
             <Image 
@@ -19,14 +19,14 @@ const TabIcon:FC<TabsIconProps> = ({ icon, color, name, focused }) => {
             tintColor={color}
             className='w-6 h-6'
             />
-            <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs`} style={{color: color}}>{name}</Text>
+            <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs text-[${color}]`}>{name}</Text>
         </View>
     )
 }
 
 const TabsLayout = () => {
   return (
-    <>
+    <React.Fragment>
     <Tabs screenOptions={{
         tabBarShowLabel: false,
         tabBarActiveTintColor: '#ffa001',
@@ -53,7 +53,7 @@ const TabsLayout = () => {
             )
         }}
         />
-         <Tabs.Screen 
+        <Tabs.Screen 
         name='bookmark' 
         options={{
             title: 'Bookmark',
@@ -83,7 +83,7 @@ const TabsLayout = () => {
             )
         }}
         />
-         <Tabs.Screen 
+        <Tabs.Screen 
         name='profile' 
         options={{
             title: 'Profile',
@@ -99,8 +99,8 @@ const TabsLayout = () => {
         }}
         />
     </Tabs>
-    </>
+    </React.Fragment>
   )
 }
 
-export default TabsLayout
+export default TabsLayout;
